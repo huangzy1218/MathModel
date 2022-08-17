@@ -1,0 +1,10 @@
+x0 = [0,3,5,7,9,11,12,13,14,15];
+y0 = [0,1.2,1.7,2.0,2.1,2.0,1.8,1.2,1.0,1.6];
+xi = 0:0.1:15;
+yi = interp1(x0,y0,xi,'spline');
+plot(x0,y0,'k+',xi,yi,'r-');
+grid on;
+idx = find(yi == min(yi));
+ymin = yi(idx);
+idx = find(yi == max(yi));
+ymax = yi(idx);
